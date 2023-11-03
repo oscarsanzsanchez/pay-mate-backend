@@ -1,7 +1,6 @@
 # Pay Mate - API/backend
 ## Server
-
-### Installation
+### Installation
 You may use `pnpm` for installing all neccessary dependencies.
 
 ### Development start
