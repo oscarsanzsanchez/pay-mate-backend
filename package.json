@@ -1,0 +1,36 @@
+{
+  "name": "pay-mate-backend",
+  "version": "1.0.0",
+  "description": "The following AWS resources are created, always via Terraform and tested locally with LocalStack:",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx watch ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscarsanzsanchez/pay-mate-backend.git"
+  },
+  "author": "Oscar Sanz Sanchez",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/oscarsanzsanchez/pay-mate-backend/issues"
+  },
+  "homepage": "https://github.com/oscarsanzsanchez/pay-mate-backend#readme",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2"
+  },
+  "devDependencies": {
+    "@hapi/eslint-plugin": "^6.0.0",
+    "@types/node": "^20.8.10",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.0.3",
+    "tsx": "^3.14.0",
+    "typescript": "^5.2.2"
+  }
+}
