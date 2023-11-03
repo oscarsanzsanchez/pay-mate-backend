@@ -1,4 +1,12 @@
 # Pay Mate - API/backend
+## Server
+
+### Installation
+You may use `pnpm` for installing all neccessary dependencies.
+
+### Development start
+For starting the server in dev mode, execute the command `npm start`.
+
 ## Infrastructure
 The following AWS resources are created, always via Terraform and tested locally with LocalStack:
 
