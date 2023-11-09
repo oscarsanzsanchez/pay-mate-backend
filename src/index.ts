@@ -1,21 +1,28 @@
-import Hapi from "@hapi/hapi";
+import { server as hapiServer } from "@hapi/hapi";
+
+import "dotenv/config";
+import "reflect-metadata";
+import { RegisterRoutes } from "routes";
+import { AppDataSource } from "vendors/dbConnector";
 
 const initServer = async () => {
-	const server = Hapi.server({
+	const server = hapiServer({
 		port: 3000,
 		host: "localhost"
 	});
-
-	server.route({
-		method: "GET",
-		path: "/",
-		handler: () => {
-			return "Hello World!";
-		}
-	});
+	RegisterRoutes(server);
 
 	await server.start();
-	console.log("Server running on %s 🚀", server.info.uri);
+
+	try {
+		await AppDataSource.initialize();
+
+		console.log("✅ Database connected");
+	} catch (err) {
+		console.log("❌ Database connection failed - ", err);
+	}
+
+	console.log("🚀 Server running on %s", server.info.uri);
 };
 
 process.on("unhandledRejection", (err) => {

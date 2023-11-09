@@ -1,17 +1,25 @@
 {
+	"root": true,
+	"settings": {
+		"import/resolver": {
+			"typescript": {
+				"alwaysTryTypes": true
+			} // this loads <rootdir>/tsconfig.json to eslint
+		}
+	},
 	"env": {
 		"browser": true,
 		"es2021": true
 	},
 	"extends": [
 		"eslint:recommended",
-		"plugin:import/recommended",
-		"plugin:import/typescript",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:prettier/recommended",
 		"prettier",
-		"plugin:@hapi/recommended"
+		"plugin:@hapi/recommended",
+		"plugin:import/recommended",
+		"plugin:import/typescript"
 	],
 	"overrides": [
 		{
@@ -29,7 +37,7 @@
 		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
-	"plugins": ["@typescript-eslint", "import", "prettier"],
+	"plugins": ["import", "@typescript-eslint", "prettier"],
 	"rules": {
 		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
@@ -38,6 +46,7 @@
 		"@typescript-eslint/no-non-null-assertion": ["off"],
 		"@typescript-eslint/explicit-module-boundary-types": ["off"],
 		"@typescript-eslint/ban-types": ["off"],
-		"@hapi/scope-start": ["off"]
+		"@hapi/scope-start": ["off"],
+		"brace-style": ["error", "1tbs", { "allowSingleLine": true }]
 	}
 }
